@@ -11,24 +11,33 @@
 
 :root{
     --text-color:#f5f5f5;
-    --hover-color:#2bff9c;
+    --hover-color:#00ff11;
     --bg-color:#000000;
     --secon-bg-color:#292e33;
     --big-font: 2.5rem;
     --norma-font:2rem;
     --small-font:1.2rem;
-    --neon-box-shadow:0 0 .5rem #2bff9c;
+    --neon-box-shadow:0 0 .5rem rgb(0, 255, 17);
     --h2-font: 3rem;
-    --font-neon-text-shadow:0 0 10px rgba(18, 247, 255, 0.3),
-    0 0 20px rgba(18, 247, 255, 0.3),
-    0 0 30px rgba(18, 247, 255, 0.3),
-    0 0 40px rgba(18, 247, 255, 0.3),
-    0 0 70px rgba(18, 247, 255, 0.3),
-    0 0 80px rgba(18, 247, 255, 0.3),
-    0 0 100px rgba(18, 247, 255, 0.3),
-    0 0 150px rgba(18, 247, 255, 0.3);   
+    --font-neon-text-shadow:0 0 10px #00ff114d,
+    0 0 20px rgba(0, 255, 17, 0.3),
+    0 0 30px rgba(0, 255, 17, 0.3),
+    0 0 40px rgba(0, 255, 17, 0.3),
+    0 0 70px rgba(0, 255, 17, 0.3),
+    0 0 80px rgba(0, 255, 17, 0.3),
+    0 0 100px rgba(0, 255, 17, 0.3),
+    0 0 150px rgba(0, 255, 17, 0.3);
+    --font-neon-text-shadow-mini:0 0 1px #00ff114d,
+    0 0 5px rgba(0, 255, 17, 0.3),
+    0 0 10px rgba(0, 255, 17, 0.3),
+    0 0 15px rgba(0, 255, 17, 0.3),
+    0 0 200px rgba(0, 255, 17, 0.3),
+    0 0 30px rgba(0, 255, 17, 0.3),
+    0 0 0px rgba(0, 255, 17, 0.3),
+    0 0 0px rgba(0, 255, 17, 0.3);    
 }
 
+/*-------------------Body---------------------*/
 body{
     font-family: "poppins",sans-serif;
     background-color: var(--bg-color);
@@ -38,21 +47,29 @@ body{
     height: 100%;
 }
 
+/*-------------------Header---------------------*/
 header{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    padding:20px 10% ;
+    padding:20px 5% ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgb(0, 0, 0);
 }
 
 .logo{
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
+    text-shadow: var(--font-neon-text-shadow);
 }
 span{
     color: var(--hover-color);
+    text-shadow: none;
 }
 
 .nav-list-items{
@@ -65,44 +82,291 @@ span{
 }
 .nav-list-items a:hover{
     color: var(--hover-color);
-    text-shadow: 0 0 10px rgba(18, 247, 255, 0.4),
-    0 0 20px rgba(18, 247, 255, 0.4),
-    0 0 30px rgba(18, 247, 255, 0.4),
-    0 0 40px rgba(18, 247, 255, 0.4),
-    0 0 70px rgba(18, 247, 255, 0.4),
-    0 0 80px rgba(18, 247, 255, 0.4),
-    0 0 100px rgba(18, 247, 255, 0.4),
-    0 0 150px rgba(18, 247, 255, 0.4);
+    text-shadow:var(--neon-box-shadow);
     transition: 0.5s ease;
 }
 
 #menu-icon{
     font-size: 1.8rem;
     z-index: 10001;
+    width: 50px;
+    height: 50px;
+    text-align: center;
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 50px;
     background: var(--hover-color);
     border-radius: 3px;
     color: var(--secon-bg-color);
-    padding: 5px 5px 5px 5px;
+    padding: 4px;
     display: none;
 }
 
+/*-------------------Body-Section--------------------*/
 section{
-    padding: 100px 10%;
+    padding: 0px 10%;
 
+}
+
+
+.home{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    align-items: start;
+    grid-gap:2em;
+}
+
+.home-content{
+    max-width: 100%;
+    margin-top: 6.5em;
+}
+
+
+.home-content h1{
+    font-size: var(--big-font);
+    font-weight: 700px;
+
+}
+
+.change-text{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.change-text h3{
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+}
+
+.typing-text {
+    color: var(--hover-color);
+    text-shadow: var(--neon-box-shadow-mini);
+}
+
+/* Blinking Cursor එක සඳහා */
+.cursor {
+    display: inline-block;
+    color: var(--hover-color);
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+/* Cursor එක නිවී නිවී පත්තු වීමේ Animation එක */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+.home-content p {
+    margin: 20px 20px 20px 0px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+    font-size: var(--small-font);
+}
+
+.info-box h5{
+    font-size: var(--small-font);
+}
+.emai-info span {
+    font-size: 220px;
+}
+
+
+/*---------------------Button----------------------------*/
+.btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    height: 45px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: var(--hover-color);
+    color: black;
+    border-radius: 25px;
+    font-weight: 500;
+    box-shadow: inset 0 0 20px black;
+}
+
+.btn:hover{
+    background: rgba(0, 0, 0, 0);
+    color: var(--hover-color);
+    box-shadow: var(--font-neon-text-shadow-mini);
+    transition: all 0.5s ease ;
+}
+
+/*------------------------------Social Icons--------------------------*/
+
+.social-icons{
+    margin-top: 45px;
+}
+.social-icons i{
+    font-size: 25px;
+    color: var(--hover-color);
+    background: transparent;
+    border-radius: 25px;
+    padding: 7px;
+    margin: 10px;
+    box-shadow: var(--font-neon-text-shadow-mini);
+
+}
+
+.social-icons i:hover{
+    box-shadow: none;
+    box-shadow: inset 0 0 10px;
+    background: #00ff11;
+    color: #000000;
+    transition: all 0.5s ease;
+
+}
+
+
+
+/*--------------------------------Image box-------------------------*/
+.img-box{
+    position: sticky;
+    top: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.img-box img{
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    filter: drop-shadow(0 0 100px rgba(0, 255, 136, 0.532));
+}
+
+footer{
+    width: 100%;
+    top: 700px;
+    text-align: left;
+    z-index: 10002;
+    padding: 30px;
+    background: transparent;
+
+}
+
+
+/* =========================================
+   Mobile Responsive Code 
+   ========================================= */
+@media (max-width: 850px) {
+    /* 1. Header එක සහ Menu Icon එක පෙන්වීම */
+    #menu-icon {
+        display: block; /* ෆෝන් එකේදි hamburger icon එක පෙන්වනවා */
+
+    }
+
+header{
+    padding: 15px;
+    background: #000000c8;
+}
+
+.nav-list{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+    border-left: 2px solid var(--hover-color);
+    border-right: 2px solid var(--hover-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    transition: right 0.5s ease;
+}
+
+.nav-list.open {
+    right: 0; /* Menu එක විවෘත කරන විට right 0 කරයි */
+}
+.nav-list-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list-items a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2rem;
 }
 
 .home{
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    grid-gap: 4em;
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    text-align: center;
 }
 
-home-content{
-    max-width: 600px;
+.home-content h1{
+    font-size: 1.5rem;
+}
+
+.change-text h3{
+    font-size: 1.2rem;
+}
+
+.home-content p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.info-box, .btn-box, .social-icons {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+.btn-box {
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.img-box {
+    position: relative;
+    top: 0;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.img-box img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 0 100px rgba(0, 255, 136, 0.532));
+}
+
+footer{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.365);
+    font-size: 1.1rem;
+}
+
+
+
 }
