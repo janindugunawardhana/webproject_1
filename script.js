@@ -42,3 +42,31 @@ function typeEffect() {
 document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
 });
+
+
+
+// Mobile Menu Toggle කිරීම
+const menuIconBox = document.querySelector('#menu-icon');
+const menuIcon = document.querySelector('#menu-icon i');
+const navList = document.querySelector('.nav-list');
+
+menuIconBox.addEventListener('click', () => {
+    // Menu එක එළියට ගැනීම සහ හැංගීම
+    navList.classList.toggle('open');
+
+    // Icon එක (Menu -> Close) වෙනස් කිරීම
+    if(navList.classList.contains('open')) {
+        menuIcon.classList.replace('ri-menu-line', 'ri-close-line');
+    } else {
+        menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+    }
+});
+
+// Menu එකේ Link එකක් Click කළාම Menu එක ඔටෝ වැසී යාම
+const navLinks = document.querySelectorAll('.nav-list-items a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('open');
+        menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
+    });
+});
