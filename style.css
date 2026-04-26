@@ -47,12 +47,13 @@
 
 /*-------------------Body---------------------*/
 body{
-    font-family: "poppins",sans-serif;
-    background-color: var(--bg-color);
+    font-family: "poppins", sans-serif;
+    background-color: black;
     color: var(--text-color);
     width: 100%;
     min-height: 100vh;
     height: 100%;
+    overflow-x: hidden; 
 }
 
 /*-------------------Header---------------------*/
@@ -133,8 +134,8 @@ section{
     grid-gap:2em;
     position: sticky;
     top: 0;
-    height: 100vh; /* තිරයේ සම්පූර්ණ උසම ගන්නවා */
-    z-index: 1; /* Footer එකට යටින් තියන්න */
+    height: 100vh;
+    z-index: 1;
 }
 
 .home-content{
@@ -272,7 +273,6 @@ section{
 
 footer{
     width: 100%;
-    margin-top: 30px;
     text-align: left;
     z-index: 10002;
     padding: 35px;
@@ -369,7 +369,7 @@ footer{
 /* ------------------------ Skills Section------------------------------------- */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* PC එකට තීරු 2ක්, Mobile එකට 1ක් */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr)); /* PC එකට තීරු 2ක්, Mobile එකට 1ක් */
     gap: 3rem;
     padding: 20px 0;
     margin-bottom: 100px;
@@ -377,6 +377,7 @@ footer{
 
 .skill-box {
     background: transparent;
+    padding: 0px 20px 0px 20px ;
 }
 
 /* අකුරු සහ ප්‍රතිශතය (%) */
@@ -550,11 +551,12 @@ footer{
     display: flex;
     flex-direction: row; /* බොත්තම් ටික පැත්තෙන් පැත්ත තියන්න */
     justify-content: center;
-    gap: 100px; /* බොත්තම් අතර පරතරය */
+    gap: 30px; /* බොත්තම් අතර පරතරය */
 }
 
 /* තනි බොත්තමක හැඩය (ඔයාගේ කලින් හැඩයම පාවිච්චි කරන්නත් පුළුවන්) */
 .btn-item {
+    width: 200px;
     color: var(--hover-color);
     font-size: 1.2rem;
     display: flex;
@@ -571,18 +573,17 @@ footer{
         transition: 0.5s ease;
 }
 
-
+/* Email address එක තිරයෙන් එළියට පැනීම වැළැක්වීමට 👇 */
+.email-info span {
+    font-size: 1rem; 
+    word-wrap: break-word; /* ඉඩ මදි වුණොත් අකුරු පල්ලෙහාට කඩන්න */
+}
 
 /* =========================================
    Mobile Responsive Code 
    ========================================= */
 @media (max-width: 850px) {
 
-    body {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-}
     /* 1. Header එක සහ Menu Icon එක පෙන්වීම */
     #menu-icon {
         display: block; /* ෆෝන් එකේදි hamburger icon එක පෙන්වනවා */
@@ -628,6 +629,9 @@ header{
     grid-template-columns: 1fr;
     padding-top: 10px;
     text-align: center;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 50px;
 }
 
 .home-content h1{
@@ -682,15 +686,24 @@ header{
     display:none; 
 }
 
-footer{
-    text-align: center;
-    background: rgba(0, 0, 0, 0.365);
-    font-size: 1.1rem;
-    position: relative;
-    padding: 20px 0;
-    margin-top: auto;
-    z-index: 0;
-}
+
+
+.skills-container {
+        display: grid;
+        grid-template-columns: 1fr; /* එක තීරුවක් බවට පමණක් පත් කිරීම (350px සීමාව ඉවත් කළා) */
+        width: 100%;
+        gap: 2rem; /* පරතරය ටිකක් අඩු කළා */
+        padding: 20px 15px; /* දෙපැත්තෙන් තිරයේ ගෑවෙන්නේ නැති වෙන්න පොඩි ඉඩක් තැබීම */
+        box-sizing: border-box; /* සම්පූර්ණ පළල තිරයට සීමා කිරීම */
+    }
+
+    /* ෆෝන් එකේදි අනවශ්‍ය හිස් ඉඩ අයින් කිරීම */
+.skill-box {
+        padding: 0; 
+        width: 100%;
+    }
+
+
 
 
 .contact-form .input-box input {
@@ -715,8 +728,8 @@ footer{
     .btn-item {
         flex-direction: row; 
         justify-content: center;
-        background: black
-        padding: 15px;
+        background: black;
+        padding : 15px;
         border-radius: 10px;
         border: 1px solid transparent;
         transition: 0.3s;
@@ -736,4 +749,56 @@ footer{
     .contact-wrapper{
         margin-bottom: 80px;
     }
+    .conect_home, .conect {
+        height: auto; /* ඇතුළේ තියෙන දේවල්වල දිග අනුව පෙට්ටිය දිගු වීමට ඉඩ දීම */
+        min-height: 100vh; /* අවම උස තිරයේ උසට සමාන කිරීම */
+        padding-bottom: 40px; /* Footer එකට උඩින් පොඩි හිස් ඉඩක් තැබීම */
+    }
+
+    footer {
+        width: 100%;
+        text-align: center; /* අකුරු මැදට ගැනීම */
+        padding: 20px 15px; /* ලොකු ඉඩ අඩු කිරීම */
+        font-size: 0.9rem; /* ෆෝන් එකට ගැළපෙන්න අකුරු පොඩි කිරීම */
+        box-sizing: border-box; /* සම්පූර්ණ පළලම ගැනීමට */
+    }
+
+    .btn-box {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%; /* 400px වෙනුවට 100% ලෙස දෙන්න */
+        max-width: 320px; /* අවශ්‍ය නම් පමණක් උපරිම පළල සීමා කරන්න */
+        height: auto;
+        margin: 20px auto;
+        padding: 20px;
+        margin-bottom: 1.5em;
+        margin-top: 1em;
+    }
+
+    /* 1. ප්‍රධාන මාතෘකාවල සයිස් එක ෆෝන් එකට ගැළපෙන්න පොඩි කිරීම */
+    .heading {
+        font-size: 2rem; /* 3rem වෙනුවට 2rem කිරීම */
+        margin-top: 100;
+    }
+
+    .education .sub-heading {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 2. Education Box එක ඇතුළේ දේවල් හරියටම මැදට (Center) ගැනීම */
+    .education-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* ලෝගෝ එක මැදට ගනී */
+        text-align: center; /* අකුරු මැදට ගනී */
+        padding: 25px 20px; /* ෆෝන් එකට ගැළපෙන්න Padding එක ටිකක් අඩු කළා */
+    }
+
+    /* ලෝගෝ එකට යටින් පොඩි ඉඩක් තැබීම */
+    .education-box img {
+        margin-bottom: 15px;
+    }
+
 }
