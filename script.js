@@ -70,3 +70,14 @@ navLinks.forEach(link => {
         menuIcon.classList.replace('ri-close-line', 'ri-menu-line');
     });
 });
+
+// දැනට ඉන්න පිටුවට අදාළ ලින්ක් එක Active කිරීම
+const currentLocation = window.location.href;
+const menuItems = document.querySelectorAll('.nav-list-items a');
+
+menuItems.forEach(link => {
+    // ලින්ක් එකේ තියෙන URL එකයි, දැනට ඉන්න URL එකයි සමානයි නම්
+    if (link.href === currentLocation) {
+        link.classList.add('active');
+    }
+});
