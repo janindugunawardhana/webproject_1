@@ -95,7 +95,6 @@ span{
     transition: 0.5s ease;
 }
 
-/* Active වෙලා තියෙන ලින්ක් එකට Neon පෙනුම දීම */
 .nav-list-items a.active {
     color: var(--hover-color);
     text-shadow: 
@@ -166,7 +165,6 @@ section{
     text-shadow: var(--neon-box-shadow-mini);
 }
 
-/* Blinking Cursor එක සඳහා */
 .cursor {
     display: inline-block;
     color: var(--hover-color);
@@ -174,7 +172,6 @@ section{
     animation: blink 0.7s infinite;
 }
 
-/* Cursor එක නිවී නිවී පත්තු වීමේ Animation එක */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -290,7 +287,6 @@ footer{
             Education Page
                     -------------------*/
 
-/* Education මාතෘකාව */
 .heading {
     text-align: center;
     font-size: var(--h2-font);
@@ -306,35 +302,33 @@ footer{
 
 }
 
-/* Boxes අඩංගු ප්‍රධාන කොටස (Grid එක) */
 .education-container {
     display: grid;
-    /* තිරයේ ඉඩ අනුව Box ඔටෝමැටික් පෙළගැසීම (Responsive) */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem; /* Box දෙකක් අතර පරතරය */
+    gap: 2rem; 
 }
 
 .education-box img{
     width: 100px;
 }
 
-/* තනි Box එකක හැඩය */
+
 .education-box {
-    background: rgba(0, 128, 0, 0.135); /* අළු පැහැති පසුබිම */
+    background: rgba(0, 128, 0, 0.135); 
     padding: 30px;
-    border-radius: 15px; /* Box එකේ මුලු රවුම් කිරීම */
-    border: 2px solid transparent; /* මුලින් බෝඩරය නොපෙනී තැබීම */
-    transition: 0.4s ease; /* Hover වේගය */
+    border-radius: 15px; 
+    border: 2px solid transparent; 
+    transition: 0.4s ease; 
 }
 
-/* Mouse එක Box එක උඩට ගෙනිච්චම පේන විදිහ (Hover Effect) */
+
 .education-box:hover {
-    border-color: var(--hover-color); /* Neon බෝඩරය මතු වීම */
-    box-shadow: var(--neon-box-shadow); /* Neon Glow එක වැටීම */
-    transform: translateY(-10px); /* Box එක ටිකක් උඩට ඉස්සීම */
+    border-color: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+    transform: translateY(-10px); 
 }
 
-/* Box එක ඇතුළේ තියෙන අකුරු සහ Icon හැඩ ගැන්වීම */
+
 .education-box i {
     font-size: 3rem;
     color: var(--hover-color);
@@ -369,7 +363,7 @@ footer{
 /* ------------------------ Skills Section------------------------------------- */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr)); /* PC එකට තීරු 2ක්, Mobile එකට 1ක් */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr)); 
     gap: 3rem;
     padding: 20px 0;
     margin-bottom: 100px;
@@ -380,7 +374,7 @@ footer{
     padding: 0px 20px 0px 20px ;
 }
 
-/* අකුරු සහ ප්‍රතිශතය (%) */
+
 .skill-info {
     display: flex;
     justify-content: space-between;
@@ -390,39 +384,38 @@ footer{
     font-weight: 600;
 }
 
-/* හිස් Progress Bar එකේ පසුබිම */
+
 .skill-bar {
     width: 100%;
     height: 15px;
-    background: var(--secon-bg-color); /* අළු පාට පසුබිම */
+    background: var(--secon-bg-color); 
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
 
-/* පිරෙන කොටස (Neon Bar එක) */
+
 .skill-progress {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    background: var(--hover-color); /* Neon කොළ පාට */
+    background: var(--hover-color);
     border-radius: 10px;
-    box-shadow: var(--neon-box-shadow); /* Glow Effect එක */
-    /* මුලින්ම Bar එක 0% ඉඳන් පටන් අරන් පිරෙන්න Animation එකක් */
+    box-shadow: var(--neon-box-shadow); 
     animation: fillBar 2s ease forwards; 
 }
 
-/* එක එක Skill එකට අදාළ ප්‍රතිශත (Width) මෙතනින් වෙනස් කරන්න */
+
 .html-css { width: 90%; }
 .javascript { width: 80%; }
 .wordpress { width: 95%; }
 .n8n { width: 85%; }
 
-/* Bar එක පිරෙන Animation එක */
+
 @keyframes fillBar {
     0% {
-        width: 0; /* මුලින්ම 0 යි */
+        width: 0; 
     }
 }
 
@@ -443,7 +436,7 @@ footer{
     width: 100%;
     max-width: 100%;
     height: 100vh;
-    align-items: flex-start; /* 👈 හැමදෙයක්ම උඩටම ගන්න මේක අනිවාර්යයි */
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -475,15 +468,13 @@ footer{
     font-size: 1.2rem;
     border-radius: 10px;
     margin-bottom: 15px;
-    border: 2px solid transparent; /* මුලදී Border එක නොපෙනී තැබීම */
+    border: 2px solid transparent;
     transition: 0.3s ease;
 }
-/* උඩ පේළි දෙකේ කොටු දෙක බැගින් තැබීම */
 .contact-form .input-box input {
     width: 49%;
 }
 
-/* Type කරන්න කොටුවක් Click කළාම Neon පාටින් පත්තු වීම (Focus) */
 .contact-form .input-box input:focus,
 .contact-form textarea:focus {
     border-color: var(--hover-color);
@@ -493,7 +484,7 @@ footer{
 }
 
 .contact-form textarea {
-    resize: none; /* කොටුව අදින්න බැරි වෙන විදිහට සෑදීම */
+    resize: none;
     
 }
 
@@ -503,21 +494,20 @@ footer{
 }
 
 
-/* ප්‍රධාන කොටුව (පින්තූරය උඩින් සහ බොත්තම් යටින් තැබීම) */
 .contact-wrapper {
     display: flex;
-    flex-direction: column; /* 👈 මේකෙන් තමයි යටින් යටින් වැටෙන්න හදන්නේ */
-    align-items: center; /* හැමදෙයක්ම හරියටම මැදට ගැනීම */
-    gap: 100px; /* පින්තූරය සහ බොත්තම් අතර පරතරය */
+    flex-direction: column;
+    align-items: center; 
+    gap: 100px;
     justify-content: center;
     width: 100%;
     max-height:auto;
     margin-top: 100px;
 }
 .neon-image-container {
-    width: 300px; /* ඔයාට අවශ්‍ය ප්‍රමාණය */
+    width: 300px; 
     height: 300px;
-    border-radius: 50%; /* රවුමක් කිරීමට */
+    border-radius: 50%; 
     margin-top: 50px;
     background: transparent;
     position: relative;
@@ -530,8 +520,8 @@ footer{
 .neon-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 1:1 පින්තූරය රවුම ඇතුළේ ලස්සනට තැබීමට */
-    border-radius: 50%; /* පින්තූරයද රවුම් කිරීමට */
+    object-fit: cover; 
+    border-radius: 50%; 
 }
 
 /* Animation Define */
@@ -546,21 +536,20 @@ footer{
     }
 }
 
-/* බොත්තම් 3 අඩංගු වන කොටුව (ඒවා එක පෙළට තැබීම) */
+
 .action-buttons {
     display: flex;
-    flex-direction: row; /* බොත්තම් ටික පැත්තෙන් පැත්ත තියන්න */
+    flex-direction: row; 
     justify-content: center;
-    gap: 30px; /* බොත්තම් අතර පරතරය */
+    gap: 30px; 
 }
 
-/* තනි බොත්තමක හැඩය (ඔයාගේ කලින් හැඩයම පාවිච්චි කරන්නත් පුළුවන්) */
 .btn-item {
     width: 200px;
     color: var(--hover-color);
     font-size: 1.2rem;
     display: flex;
-    flex-direction: column; /* Icon එක උඩින්, අකුරු යටින් ගන්න ඕනෙනම් */
+    flex-direction: column; 
     align-items: center;
     border-radius: 20px;
     gap: 10px;
@@ -573,10 +562,10 @@ footer{
         transition: 0.5s ease;
 }
 
-/* Email address එක තිරයෙන් එළියට පැනීම වැළැක්වීමට 👇 */
+
 .email-info span {
     font-size: 1rem; 
-    word-wrap: break-word; /* ඉඩ මදි වුණොත් අකුරු පල්ලෙහාට කඩන්න */
+    word-wrap: break-word; 
 }
 
 /* =========================================
@@ -584,9 +573,9 @@ footer{
    ========================================= */
 @media (max-width: 850px) {
 
-    /* 1. Header එක සහ Menu Icon එක පෙන්වීම */
+
     #menu-icon {
-        display: block; /* ෆෝන් එකේදි hamburger icon එක පෙන්වනවා */
+        display: block; 
 
     }
 
@@ -611,7 +600,7 @@ header{
 }
 
 .nav-list.open {
-    right: 0; /* Menu එක විවෘත කරන විට right 0 කරයි */
+    right: 0; 
 }
 .nav-list-items {
     flex-direction: column;
@@ -682,7 +671,7 @@ header{
     width: 100%;
     max-width: 400px;
     height: auto;
-    filter: drop-shadow(0 0 100px rgba(0, 255, 136, 0.532));
+    filter: drop-shadow(0 0 100px rgba(0, 255, 17, 0.5));
     display:none; 
 }
 
@@ -690,14 +679,14 @@ header{
 
 .skills-container {
         display: grid;
-        grid-template-columns: 1fr; /* එක තීරුවක් බවට පමණක් පත් කිරීම (350px සීමාව ඉවත් කළා) */
+        grid-template-columns: 1fr; 
         width: 100%;
-        gap: 2rem; /* පරතරය ටිකක් අඩු කළා */
-        padding: 20px 15px; /* දෙපැත්තෙන් තිරයේ ගෑවෙන්නේ නැති වෙන්න පොඩි ඉඩක් තැබීම */
-        box-sizing: border-box; /* සම්පූර්ණ පළල තිරයට සීමා කිරීම */
+        gap: 2rem; 
+        padding: 20px 15px; 
+        box-sizing: border-box; 
     }
 
-    /* ෆෝන් එකේදි අනවශ්‍ය හිස් ඉඩ අයින් කිරීම */
+
 .skill-box {
         padding: 0; 
         width: 100%;
@@ -707,7 +696,7 @@ header{
 
 
 .contact-form .input-box input {
-        width: 100%; /* ෆෝන් එකේදි කොටු එකකට යටින් එකක් වැටීම */
+        width: 100%; 
     }
 
 
@@ -716,15 +705,15 @@ header{
         height: 200px;
     }
 
-    /* බොත්තම් ටික තිරස් අතට නැතුව එකකට යටින් එකක් වැටෙන්න සැකසීම */
+
     .action-buttons {
         flex-direction: column; 
-        width: 100%; /* බොත්තම තිරයේ පළලටම හැදීම */
-        gap: 20px; /* බොත්තම් අතර පරතරය ටිකක් අඩු කිරීම */
+        width: 100%; 
+        gap: 20px; 
         margin-bottom: 80px;
     }
 
-    /* ෆෝන් එකේදි බොත්තම ඔබන්න ලේසි වෙන්න Icon එකයි අකුරුයි පැත්තෙන් පැත්තට ගැනීම */
+
     .btn-item {
         flex-direction: row; 
         justify-content: center;
@@ -735,7 +724,6 @@ header{
         transition: 0.3s;
     }
 
-    /* ෆෝන් එකේදි Hover කරද්දි හෝ Tap කරද්දි පේන විදිහ */
     .btn-item:hover, .btn-item:active {
         border-color: var(--hover-color);
         box-shadow: var(--neon-box-shadow);
@@ -743,31 +731,31 @@ header{
 
     .conect{
         flex-direction: column; 
-        width: 100%; /* බොත්තම තිරයේ පළලටම හැදීම */
+        width: 100%; 
     }
 
     .contact-wrapper{
         margin-bottom: 80px;
     }
     .conect_home, .conect {
-        height: auto; /* ඇතුළේ තියෙන දේවල්වල දිග අනුව පෙට්ටිය දිගු වීමට ඉඩ දීම */
-        min-height: 100vh; /* අවම උස තිරයේ උසට සමාන කිරීම */
-        padding-bottom: 40px; /* Footer එකට උඩින් පොඩි හිස් ඉඩක් තැබීම */
+        height: auto; 
+        min-height: 100vh; 
+        padding-bottom: 40px; 
     }
 
     footer {
         width: 100%;
-        text-align: center; /* අකුරු මැදට ගැනීම */
-        padding: 20px 15px; /* ලොකු ඉඩ අඩු කිරීම */
-        font-size: 0.9rem; /* ෆෝන් එකට ගැළපෙන්න අකුරු පොඩි කිරීම */
-        box-sizing: border-box; /* සම්පූර්ණ පළලම ගැනීමට */
+        text-align: center; 
+        padding: 20px 15px; 
+        font-size: 0.9rem; 
+        box-sizing: border-box; 
     }
 
     .btn-box {
         flex-direction: column;
         gap: 15px;
-        width: 100%; /* 400px වෙනුවට 100% ලෙස දෙන්න */
-        max-width: 320px; /* අවශ්‍ය නම් පමණක් උපරිම පළල සීමා කරන්න */
+        width: 100%; 
+        max-width: 320px; 
         height: auto;
         margin: 20px auto;
         padding: 20px;
@@ -775,9 +763,9 @@ header{
         margin-top: 1em;
     }
 
-    /* 1. ප්‍රධාන මාතෘකාවල සයිස් එක ෆෝන් එකට ගැළපෙන්න පොඩි කිරීම */
+
     .heading {
-        font-size: 2rem; /* 3rem වෙනුවට 2rem කිරීම */
+        font-size: 2rem; 
         margin-top: 100;
     }
 
@@ -787,16 +775,15 @@ header{
         margin-bottom: 2rem;
     }
 
-    /* 2. Education Box එක ඇතුළේ දේවල් හරියටම මැදට (Center) ගැනීම */
     .education-box {
         display: flex;
         flex-direction: column;
-        align-items: center; /* ලෝගෝ එක මැදට ගනී */
-        text-align: center; /* අකුරු මැදට ගනී */
-        padding: 25px 20px; /* ෆෝන් එකට ගැළපෙන්න Padding එක ටිකක් අඩු කළා */
+        align-items: center; 
+        text-align: center; 
+        padding: 25px 20px; 
     }
 
-    /* ලෝගෝ එකට යටින් පොඩි ඉඩක් තැබීම */
+
     .education-box img {
         margin-bottom: 15px;
     }
