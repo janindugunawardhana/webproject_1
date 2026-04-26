@@ -6,6 +6,7 @@
     <title>Contact</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Logo/logo.png">
 </head>
 <body>
     <header>
@@ -25,13 +26,53 @@
 
     </header>
 
-    <section class="home" id="home">
+    <section class="conect_home" id="conect_home">
+        <div class="conect">
+            <div class="contact">
+                <h3 class="heading">Contact <span>Me</span></h3>
 
-
-
-
-
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
         
+        <input type="hidden" name="access_key" value="78ed1c9e-5fd1-4249-9cde-a81770ac4224">
+
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        
+        <div class="input-box">
+            <input type="number" name="phone" placeholder="Mobile Number">
+            <input type="text" name="subject" placeholder="Email Subject" required>
+        </div>
+        
+        <textarea name="message" cols="30" rows="8" placeholder="Your Message" required></textarea>
+
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+            </div>
+        <div class="contact-wrapper">
+    
+            <div class="neon-image-container">
+                <img src="my_image3.jpeg" alt="Profile">
+            </div>
+
+        <div class="action-buttons">
+        <div class="btn-item"><i class="ri-phone-line"></i> Call Now</div>
+        <div class="btn-item"><i class="ri-whatsapp-line"></i> Whatsapp</div>
+        <div class="btn-item"><i class="ri-mail-line"></i> Email</div>
+        </div>
+
+</div>
+        </div>
+
+
+
+
+
+
     </section>
 
 
@@ -40,9 +81,6 @@
 
 
 
-        <footer>
-        <p>Created by Janindu Gunawardhana | All Rights Reserved.</p>
-        </footer>
     <script src="script.js"></script>
 </body>
 </html>
