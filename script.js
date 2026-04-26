@@ -19,42 +19,42 @@ function typeEffect() {
         charIndex++;
     }
 
-    // ටයිප් වෙන වේගය (මිලි තත්පර වලින්)
-    let typingSpeed = isDeleting ? 50 : 100; // මකන වේගය 50, ටයිප් වෙන වේගය 100
 
-    // වචනය සම්පූර්ණයෙන්ම ටයිප් කරලා ඉවර නම්
+    let typingSpeed = isDeleting ? 50 : 100; 
+
+
     if (!isDeleting && charIndex === currentWord.length) {
-        typingSpeed = 2000; // ඊළඟට මැකෙන්න කලින් තත්පර 2ක් නවතින්න
+        typingSpeed = 2000; 
         isDeleting = true;
     } 
-    // වචනය සම්පූර්ණයෙන්ම මැකිලා ඉවර නම්
+
     else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length; // ඊළඟ වචනයට යන්න
-        typingSpeed = 500; // අලුත් වචනය ටයිප් වෙන්න කලින් මිලි තත්පර 500ක් නවතින්න
+        wordIndex = (wordIndex + 1) % words.length; 
+        typingSpeed = 500; 
     }
 
-    // Loop එකක් විදිහට මේ function එක දිගටම දුවන්න
+
     setTimeout(typeEffect, typingSpeed);
 }
 
-// වෙබ් පිටුව Load වෙද්දිම Animation එක පටන් ගන්න
+
 document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
 });
 
 
 
-// Mobile Menu Toggle කිරීම
+
 const menuIconBox = document.querySelector('#menu-icon');
 const menuIcon = document.querySelector('#menu-icon i');
 const navList = document.querySelector('.nav-list');
 
 menuIconBox.addEventListener('click', () => {
-    // Menu එක එළියට ගැනීම සහ හැංගීම
+
     navList.classList.toggle('open');
 
-    // Icon එක (Menu -> Close) වෙනස් කිරීම
+
     if(navList.classList.contains('open')) {
         menuIcon.classList.replace('ri-menu-line', 'ri-close-line');
     } else {
@@ -62,7 +62,7 @@ menuIconBox.addEventListener('click', () => {
     }
 });
 
-// Menu එකේ Link එකක් Click කළාම Menu එක ඔටෝ වැසී යාම
+
 const navLinks = document.querySelectorAll('.nav-list-items a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -71,12 +71,12 @@ navLinks.forEach(link => {
     });
 });
 
-// දැනට ඉන්න පිටුවට අදාළ ලින්ක් එක Active කිරීම
+
 const currentLocation = window.location.href;
 const menuItems = document.querySelectorAll('.nav-list-items a');
 
 menuItems.forEach(link => {
-    // ලින්ක් එකේ තියෙන URL එකයි, දැනට ඉන්න URL එකයි සමානයි නම්
+
     if (link.href === currentLocation) {
         link.classList.add('active');
     }
