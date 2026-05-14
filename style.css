@@ -75,6 +75,7 @@ header{
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: var(--font-neon-text-shadow);
+    color: var(--text-color);
 }
 span{
     color: var(--hover-color);
@@ -139,7 +140,8 @@ section{
 
 .home-content{
     max-width: 100%;
-    margin-top: 6.5em;
+    margin-top: 20%;
+    margin-bottom: 30%;
 }
 
 
@@ -265,7 +267,7 @@ section{
     max-width: 1000px;
     height: auto;
     filter: drop-shadow(0 0 100px rgba(0, 255, 136, 0.532));
-    margin-top: 6.5rem;
+    margin-top: 18vh;
 }
 
 footer{
@@ -407,10 +409,11 @@ footer{
 }
 
 
-.html-css { width: 90%; }
-.javascript { width: 80%; }
-.wordpress { width: 95%; }
-.n8n { width: 85%; }
+.html-css { width: 50%; }
+.javascript { width: 40%; }
+.wordpress { width: 80%; }
+.n8n { width: 65%; }
+.python { width: 60%; }
 
 
 @keyframes fillBar {
@@ -428,6 +431,8 @@ footer{
 .conect_home{
     width: 100%;
     height: 100vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .conect {
     display: flex;
@@ -496,10 +501,10 @@ footer{
 
 .contact-wrapper {
     display: flex;
+    justify-content: right;
     flex-direction: column;
     align-items: center; 
     gap: 100px;
-    justify-content: center;
     width: 100%;
     max-height:auto;
     margin-top: 100px;
