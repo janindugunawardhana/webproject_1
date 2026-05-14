@@ -1,4 +1,8 @@
 
+
+
+//------------------------------------Home Typing Effect----------------------------------------//
+
 const words = ["WP Developer", "Designer", "Innovator", "Investor"];
 
 let wordIndex = 0; // Live word
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
+//------------------------------------Menu Icon Toggle----------------------------------------//
 const menuIconBox = document.querySelector('#menu-icon');
 const menuIcon = document.querySelector('#menu-icon i');
 const navList = document.querySelector('.nav-list');
