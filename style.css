@@ -66,7 +66,7 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: rgb(0, 0, 0);
 }
 
@@ -134,14 +134,17 @@ section{
     grid-gap:2em;
     position: sticky;
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     z-index: 1;
 }
 
 .home-content{
     max-width: 100%;
+    max-height: 75vh;
     margin-top: 20%;
     margin-bottom: 30%;
+
 }
 
 
